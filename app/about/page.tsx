@@ -1,8 +1,36 @@
 import Link from "next/link";
 import { ArrowLeft, Bot, LineChart, ShieldCheck, WalletCards } from "lucide-react";
 
-const pillars = [{ icon: LineChart, title: "See your liquidity", text: "YieldPulse maps your operating baseline, available cash, and deposit opportunities so decisions start with a clear picture." }, { icon: Bot, title: "Get useful guidance", text: "The AI Agent explains the app, walks through options, and helps you understand projections without claiming to make decisions for you." }, { icon: WalletCards, title: "Grow deliberately", text: "Choose an amount, tenure, and Flexi-Break preference yourself. Every deposit requires your review and confirmation." }, { icon: ShieldCheck, title: "Stay in control", text: "Track status, maturity dates, projected interest, payment records, account settings, and security choices in one place." }];
+const pillars = [
+  { icon: LineChart, title: "See your liquidity", text: "YieldPulse maps your operating baseline, available cash, and deposit opportunities so decisions start with a clear picture." },
+  { icon: Bot, title: "Get useful guidance", text: "The AI Agent explains the app, walks through options, and helps you understand projections without claiming to make decisions for you." },
+  { icon: WalletCards, title: "Grow deliberately", text: "Choose an amount, tenure, and Flexi-Break preference yourself. Every deposit requires your review and confirmation." },
+  { icon: ShieldCheck, title: "Stay in control", text: "Track status, maturity dates, projected interest, payment records, account settings, and security choices in one place." },
+];
 
 export default function AboutPage() {
-  return <main className="min-h-screen bg-[#fdfbf7] text-[#0f172a]"><nav className="border-b border-[#e9e8e4] bg-white px-6 py-4 sm:px-10"><div className="mx-auto flex max-w-5xl items-center justify-between"><Link href="/dashboard" className="flex items-center gap-2 text-xs font-bold"><ArrowLeft size={16} /> Back to overview</Link><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#ff5500] font-bold text-white">Y</span></div></nav><div className="mx-auto max-w-5xl px-6 py-12 sm:px-10"><p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff5500]">About YieldPulse</p><h1 className="mt-3 max-w-3xl font-display text-5xl leading-tight">A calmer way to understand and grow your cash.</h1><p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">YieldPulse is a guided money workspace for people who want to understand idle cash before moving it. It combines liquidity analysis, deposit planning, payment workflows, account controls, and an AI assistant into one transparent experience.</p><div className="mt-10 grid gap-4 sm:grid-cols-2">{pillars.map(({ icon: Icon, title, text }) => <section key={title} className="rounded-2xl border border-[#e9e8e4] bg-white p-6 shadow-sm"><Icon size={22} className="text-[#ff5500]"/><h2 className="mt-5 font-display text-2xl">{title}</h2><p className="mt-2 text-xs leading-5 text-slate-500">{text}</p></section>)}</div><section className="mt-10 rounded-2xl bg-[#0a192f] p-7 text-white sm:p-9"><p className="text-xs font-bold uppercase tracking-[0.15em] text-[#ffb08c]">Our promise</p><h2 className="mt-4 font-display text-3xl">Your money, your decision.</h2><p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300">Rates, returns, and AI responses are illustrative and should be reviewed with the applicable product terms. YieldPulse never executes a deposit or payment without your explicit confirmation.</p><Link href="/contact" className="mt-6 inline-flex rounded-xl bg-[#ff5500] px-5 py-3 text-xs font-bold text-white">Contact the team</Link></section></div></main>;
+  return (
+    <main className="min-h-screen bg-[#fdfbf7] text-[#0f172a]">
+      <nav className="border-b border-[#e9e8e4] bg-white px-6 py-4 sm:px-10">
+        <div className="mx-auto flex max-w-5xl items-center justify-between">
+          <Link href="/dashboard" className="flex items-center gap-2 text-xs font-bold"><ArrowLeft size={16} /> Back to overview</Link>
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#ff5500] font-bold text-white">Y</span>
+        </div>
+      </nav>
+      <div className="mx-auto max-w-5xl px-6 py-12 sm:px-10">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff5500]">About YieldPulse</p>
+        <h1 className="mt-3 max-w-3xl font-display text-5xl leading-tight">A calmer way to understand and grow your cash.</h1>
+        <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">VaultFlow is a guided money workspace that helps you understand idle cash before you move it. Link your account, map your liquidity, protect your emergency buffer, compare deposit opportunities, and track projections in one transparent place. You stay in control: every payment and deposit requires your review and confirmation.</p>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          {pillars.map(({ icon: Icon, title, text }) => <section key={title} className="rounded-2xl border border-[#e9e8e4] bg-white p-6 shadow-sm"><Icon size={22} className="text-[#ff5500]" /><h2 className="mt-5 font-display text-2xl">{title}</h2><p className="mt-2 text-xs leading-5 text-slate-500">{text}</p></section>)}
+        </div>
+        <section className="mt-10 rounded-2xl bg-[#0a192f] p-7 text-white sm:p-9">
+          <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#ffb08c]">Our promise</p>
+          <h2 className="mt-4 font-display text-3xl">Your money, your decision.</h2>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-300">Rates, returns, and AI responses are illustrative and should be reviewed with the applicable product terms. YieldPulse never executes a deposit or payment without your explicit confirmation.</p>
+          <Link href="/contact" className="mt-6 inline-flex rounded-xl bg-[#ff5500] px-5 py-3 text-xs font-bold text-white">Contact support</Link>
+        </section>
+      </div>
+    </main>
+  );
 }
